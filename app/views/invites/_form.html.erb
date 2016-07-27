@@ -1,0 +1,77 @@
+<%= form_for(invite) do |f| %>
+  <% if invite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invite.errors.count, "error") %> prohibited this invite from being saved:</h2>
+
+      <ul>
+      <% invite.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :background_color %>
+    <%= f.text_field :background_color %>
+
+    <%= f.label :font_color %>
+    <%= f.text_field :font_color %>
+
+    <%= f.label :font_family %>
+    <%= f.text_field :font_family %>
+
+    <hr>
+
+    <%= f.label :header_title %>
+    <%= f.text_field :header_title %>
+
+    <%= f.label :header_image %>
+    <%= f.file_field :header_image %>
+
+    <%= f.label :wedding_date %>
+    <%= f.text_field :wedding_date %>
+
+    <hr>
+
+    <%= f.label :bride_image %>
+    <%= f.file_field :bride_image %>
+
+    <%= f.label :bride_name %>
+    <%= f.text_field :bride_name %>
+
+    <%= f.label :bride_description %>
+    <%= f.text_area :bride_description %>
+
+    <hr>
+
+    <%= f.label :groom_image %>
+    <%= f.file_field :groom_image %>
+
+    <%= f.label :groom_name %>
+    <%= f.text_field :groom_name %>
+
+    <%= f.label :groom_description %>
+    <%= f.text_area :groom_description %>
+
+    <hr>
+
+    <%= f.label :about_title %>
+    <%= f.text_field :about_title %>
+
+    <%= f.label :about_description %>
+    <%= f.text_area :about_description %>
+
+    <hr>
+
+    <%= f.label :map_coordinates %>
+    <%= f.text_field :map_coordinates %>
+
+    <%= f.label :map_description %>
+    <%= f.text_field :map_description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

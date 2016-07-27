@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Details:</strong> <br>
+  <%= @invite.background_color %> <br>
+  <%= @invite.font_color %> <br>
+  <%= @invite.font_family %> <br>
+
+  <%= @invite.header_title %> <br>
+  <%= image_tag @invite.header_image.url(:cover) %> <br>
+  <%= @invite.wedding_date %> <br>
+
+  <%= image_tag @invite.bride_image.url(:thumb) %> <br>
+  <%= @invite.bride_name %> <br>
+  <%= @invite.bride_description %> <br>
+
+  <%= image_tag @invite.groom_image.url(:thumb) %> <br>
+  <%= @invite.groom_name %> <br>
+  <%= @invite.groom_description %> <br>
+
+  <%= @invite.about_title %> <br>
+  <%= @invite.about_description %> <br>
+
+  <%= @invite.map_coordinates %> <br>
+  <%= @invite.map_description %> <br>
+
+</p>
+
+<%= link_to 'Edit', edit_invite_path(@invite) %> |
+<%= link_to 'Back', invites_path %>

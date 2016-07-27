@@ -11,7 +11,12 @@
     </div>
   <% end %>
 
+  <div class="actions">
+    <%= f.submit 'Save' %>
+  </div>
+
   <div class="field">
+    <h3 class="section-title">Theme</h3>
     <%= f.label :background_color %>
     <%= f.text_field :background_color %>
 
@@ -19,9 +24,11 @@
     <%= f.text_field :font_color %>
 
     <%= f.label :font_family %>
-    <%= f.text_field :font_family %>
+    <%= f.select :font_family, ['Helvetica', 'Didot','Roboto','Lato','Kepler-Std','Raleway']%>
 
     <hr>
+
+    <h3 class="section-title">Header</h3>
 
     <%= f.label :header_title %>
     <%= f.text_field :header_title %>
@@ -33,6 +40,8 @@
     <%= f.text_field :wedding_date %>
 
     <hr>
+
+    <h3 class="section-title">Bride &amp Groom</h3>
 
     <%= f.label :bride_image %>
     <%= f.file_field :bride_image %>
@@ -71,7 +80,4 @@
     <%= f.text_field :map_description %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

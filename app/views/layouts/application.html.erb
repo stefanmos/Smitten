@@ -12,7 +12,10 @@
 
     <div class="navagation">
   <% if user_signed_in? %>
+    <%= link_to "View Template", current_user.invite %>
+    <%= link_to "Edit Template", edit_invite_path(current_user.invite) %>
     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <p id="notice"><%= notice %></p>
   <% else %>
     <%= link_to('Login', new_user_session_path)  %>
   <% end %>

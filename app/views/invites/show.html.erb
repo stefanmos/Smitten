@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div style="width:100%; height:50vh; background-size:cover; background-position:center; background-image: url(<%= @invite.header_image.url(:cover) %>);">
+<h1 style="color:white; text-align:center; padding-top:20vh; font-family:<%= @invite.font_family %>;"><%= @invite.header_title %></h1>
+<h4 style="color:white; text-align:center;">IS GETTING MARRIED <%= @invite.wedding_date %></h4>
+</div>
+
+<div style="width:100%; height:50vh;">
+<h2 style="text-align:center; padding-top:10vh; font-family:<%= @invite.font_family %>;">STORY</h2>
+<p style="text-align:center;">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque cursus fringilla. Morbi ullamcorper velit id erat molestie, eget ultrices enim luctus. Phasellus dolor elit, condimentum sed mauris in, sollicitudin mollis tellus. Nullam vulputate quis velit et posuere. Ut a lacus sollicitudin lorem mollis interdum et non felis.
+</p>
+</div>
+
 
 <p>
   <strong>Details:</strong> <br>
@@ -25,6 +36,3 @@
   <%= @invite.map_description %> <br>
 
 </p>
-
-<%= link_to 'Edit', edit_invite_path(@invite) %> |
-<%= link_to 'Back', invites_path %>

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20160727183855) do
     t.text     "about_description"
     t.string   "map_coordinates"
     t.string   "map_description"
-    t.         "user_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :invites
   get 'home/index'
   root 'invites#index'

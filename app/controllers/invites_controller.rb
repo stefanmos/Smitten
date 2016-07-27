@@ -1,30 +1,22 @@
 class InvitesController < ApplicationController
-  before_action :set_invite, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
+  before_action :set_invite, only: [:show, :edit, :update]
 
-  # GET /invites
-  # GET /invites.json
+
   def index
     @invites = Invite.all
   end
 
-  # GET /invites/1
-  # GET /invites/1.json
   def show
   end
 
-  # GET /invites/new
   def new
-    @invite = Invite.new
+    @invite = current_user.build_invite
   end
 
-  # GET /invites/1/edit
-  def edit
-  end
-
-  # POST /invites
-  # POST /invites.json
   def create
-    @invite = Invite.new(invite_params)
+    @invite = current_user.build_invite(invite_params)
 
     respond_to do |format|
       if @invite.save
@@ -32,13 +24,11 @@ class InvitesController < ApplicationController
         format.json { render :show, status: :created, location: @invite }
       else
         format.html { render :new }
-        format.json { render json: @invite.errors, status: :unprocessable_entity }
+        format.json { render json: @pinvite.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /invites/1
-  # PATCH/PUT /invites/1.json
   def update
     respond_to do |format|
       if @invite.update(invite_params)
@@ -52,6 +42,7 @@ class InvitesController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_invite
       @invite = Invite.find(params[:id])
@@ -64,4 +55,12 @@ class InvitesController < ApplicationController
       :bride_name, :bride_description, :groom_image, :groom_name, :groom_description,
       :about_title, :about_description, :map_coordinates, :map_description)
     end
+
+    # Confirms the correct user.
+    def correct_user
+      @invite = Invite.find(params[:id])
+      flash[:notice] = 'Dont have permission to modify this post'
+      redirect_to(root_path) unless current_user.id == @invite.user_id
+    end
+
 end

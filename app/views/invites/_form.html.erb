@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit 'Save' %>
+    <%= f.submit "Submit", :type => :image, :src => image_path("save.png") %>
   </div>
 
   <div class="field">
     <h3 class="section-title">Theme</h3>
     <%= f.label :background_color %>
-    <%= f.text_field :background_color %>
+    <%= f.text_field :background_color, class: 'colorpicker' %>
 
     <%= f.label :font_color %>
-    <%= f.text_field :font_color %>
+    <%= f.text_field :font_color, class: 'colorpicker'%>
 
     <%= f.label :font_family %>
     <%= f.select :font_family, ['Helvetica', 'Didot','Roboto','Lato','Kepler-Std','Raleway']%>

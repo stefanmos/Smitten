@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>disk copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Template-Editor" transform="translate(-63.000000, -64.000000)">
+            <g id="Group-3" filter="url(#filter-1)" transform="translate(0.000000, 50.000000)">
+                <g id="disk-copy" transform="translate(64.100505, 15.000000)">
+                    <rect id="Rectangle-path" x="0" y="0" width="20" height="20"></rect>
+                    <path d="M14.728,1.823 L3.666,1.823 C2.577,1.823 1.686,2.715 1.686,3.803 L1.686,15.684 C1.686,16.773 2.578,17.664 3.666,17.664 L15.547,17.664 C16.637,17.664 17.527,16.772 17.527,15.684 L17.527,4.92 L14.728,1.823 L14.728,1.823 Z M13.567,7.764 C13.567,8.309 13.121,8.754 12.577,8.754 L6.637,8.754 C6.092,8.754 5.647,8.309 5.647,7.764 L5.647,2.814 L13.568,2.814 L13.568,7.764 L13.567,7.764 Z M12.577,3.804 L10.597,3.804 L10.597,7.764 L12.577,7.764 L12.577,3.804 L12.577,3.804 Z" id="Shape" fill="#545454"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

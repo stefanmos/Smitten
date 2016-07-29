@@ -6,7 +6,6 @@ class AddFieldsToInvites < ActiveRecord::Migration[5.0]
       t.string :font_family
 
       t.attachment :header_image
-      t.string :header_title
       t.string :wedding_date
 
       t.attachment :bride_image
